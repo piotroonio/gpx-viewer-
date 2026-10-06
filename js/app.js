@@ -1,3 +1,5 @@
+console.log("APP START");
+
 const map = L.map('map').setView([52.1, 19.4], 6);
 
 L.tileLayer(
@@ -11,7 +13,10 @@ let trackLayer = null;
 
 const fileInput = document.getElementById('gpxFile');
 
-fileInput.addEventListener('change', handleGPX);
+fileInput.addEventListener('change', (e) => {
+console.log("PLIK WYBRANY");
+handleGPX(e);
+});
 
 async function handleGPX(event) {
 
@@ -159,4 +164,3 @@ function calculateDistance(
 
     return R * c;
 }
-`
