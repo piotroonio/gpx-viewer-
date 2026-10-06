@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GPX Viewer</title>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>class="upload-btn">
+        Wybierz plik GPX
+        <input
+            type="file"
+            id="gpxFile"
+            accept=".gpx"
+        >
+    </label>
+</header>
+
+<div class="info-panel">
+
+    <div class="card">
+        <span>Plik</span>
+        <strong id="fileName">-</strong>
+    </div>
+
+    <div class="card">
+        <span>Długość</span>
+        <strong id="distance">-</strong>
+    </div>
+
+    <div class="card">
+        <span>Przewyższenie</span>
+        <strong id="elevation">-</strong>
+    </div>
+
+    <div class="card">
+        <span>Punkty</span>
+        <strong id="points">-</strong>
+    </div>
+
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></rc="js/app.js"></script>
+
+</body>
+</html>
