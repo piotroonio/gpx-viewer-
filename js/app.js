@@ -40,6 +40,22 @@ async function handleGPX(event) {
 function parseGPX(xml) {
 
     const trkpts = xml.querySelectorAll("trkpt");
+    let startTime = null;
+    let endTime = null;
+
+    const firstTimeNode =
+    trkpts[0]?.querySelector("time");
+
+    const lastTimeNode =
+    trkpts[trkpts.length - 1]?.querySelector("time");
+
+if (firstTimeNode) {
+    startTime = new Date(firstTimeNode.textContent);
+}
+
+if (lastTimeNode) {
+    endTime = new Date(lastTimeNode.textContent);
+}
 
     if (!trkpts.length) {
 
@@ -126,6 +142,19 @@ function parseGPX(xml) {
     document.getElementById('points')
         .textContent =
         trkpts.length;
+        if (startTime) {
+
+        document.getElementById('startTime')
+        .textContent =
+        startTime.toLocaleString('pl-PL');
+        }
+
+        if (endTime) {
+
+        document.getElementById('endTime')
+        .textContent =
+        endTime.toLocaleString('pl-PL');
+        }
 }
 
 function calculateDistance(
