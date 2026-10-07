@@ -24,8 +24,7 @@ async function handleGPX(event) {
 
     if (!file) return;
 
-    document.getElementById('fileName').textContent =
-        file.name;
+    document.getElementById('fileName').textContent = file.name;
 
     const text = await file.text();
 
